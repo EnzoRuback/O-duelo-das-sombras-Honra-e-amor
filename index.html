@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Duelo das Sombras: Honra e Amor</title>
+    <!-- Pixel Font do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Telas de Apresentação de Studio -->
+        <div id="introLogos">
+            <h2 id="logo1" class="logo-text">ETEC MAS</h2>
+            <h2 id="logo2" class="logo-text">Antigravity</h2>
+            <h2 id="logo3" class="logo-text">Ruback Studios</h2>
+            <h2 id="logo4" class="logo-text">Apresentam</h2>
+        </div>
+
+        <!-- Menu Inicial Overlay -->
+        <div id="mainMenu" style="display: none;">
+            <h1>O DUELO DAS SOMBRAS</h1>
+            <p>Honra e Amor</p>
+            
+            <div class="menu-box">
+                <input type="text" id="playerName" placeholder="Nome do Jogador" value="Guerreiro">
+                
+                <select id="weaponSelect">
+                    <option value="sword">Espada</option>
+                    <option value="spear">Lança</option>
+                </select>
+
+                <button id="btnStart">Iniciar Batalha</button>
+            </div>
+            
+            <div class="controls-info">
+                <p>Controles:</p>
+                <p><b>A/D ou Setas</b>: Mover | <b>W</b>: Pular</p>
+                <p><b>J</b>: Ataque Leve | <b>K</b>: Ataque Pesado</p>
+                <p><b>F</b> (Segurar): Defesa | <b>F</b> (Timing): Parry</p>
+                <p><b>ESC</b>: Pause</p>
+            </div>
+        </div>
+
+        <!-- O canvas onde o jogo será renderizado -->
+        <canvas id="gameCanvas" width="800" height="450"></canvas>
+    </div>
+
+    <!-- Scripts do jogo -->
+    <script src="audio.js"></script>
+    <script src="engine.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
