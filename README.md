@@ -1,4 +1,4 @@
-# O Duelo das Sombras: Honra e Aço
+# O Duelo das Sombras: Honra e Amor
 
 ## 1. Visão Geral
 **O Duelo das Sombras: Honra e Aço** é um jogo de luta técnico 2D estilo Boss Rush com foco na mecânica de Defesa (Parry) e Postura, rodando no navegador.
