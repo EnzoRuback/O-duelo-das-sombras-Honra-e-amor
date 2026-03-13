@@ -1,4 +1,4 @@
-# O Duelo das Sombras: Honra e Aço
+# O Duelo das Sombras: Honra e Amor
 
 ## 1. Visão Geral
 **O Duelo das Sombras: Honra e Aço** é um jogo de luta técnico 2D estilo Boss Rush com foco na mecânica de Defesa (Parry) e Postura, rodando no navegador.
@@ -10,6 +10,7 @@
 * `J`: Ataque Leve (Mais rápido, menor dano, menor risco).
 * `K`: Ataque Pesado (Mais lento, travamento maior, maior dano).
 * `F` (Segurar): Bloqueio / Defesa.
+* `Shift`: Esquiva.
     * **Perfect Parry**: Se você apertar `F` exatamente no momento do impacto (janela de 150ms), você anula totalmente o dano à sua postura e quebra massivamente a postura do inimigo.
     * **Bloqueio Normal**: Mitiga 100% do dano de HP, mas absorve 50% do dano da arma rival como Dano de Postura.
 
