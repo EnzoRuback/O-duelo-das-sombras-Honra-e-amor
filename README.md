@@ -9,10 +9,13 @@
 * `Setas Esquerda/Direita` (ou `A/D`): Movimentam o personagem (jogador de preto, à esquerda).
 * `J`: Ataque Leve (Mais rápido, menor dano, menor risco).
 * `K`: Ataque Pesado (Mais lento, travamento maior, maior dano).
+* * `Shift`: Esquiva.
 * `F` (Segurar): Bloqueio / Defesa.
-* `Shift`: Esquiva.
     * **Perfect Parry**: Se você apertar `F` exatamente no momento do impacto (janela de 150ms), você anula totalmente o dano à sua postura e quebra massivamente a postura do inimigo.
     * **Bloqueio Normal**: Mitiga 100% do dano de HP, mas absorve 50% do dano da arma rival como Dano de Postura.
+## 3. Mecânica de Combos
+* Se você utilizar o ataque leve(j) duas vezes + ataque pesado(k), irá realizar uma investida.
+* Se você utilizar a esquiva(shift) + ataque pesado, irá relizar um corte.
 
 ## 3. Mecânica do Core Loop
 * Observe a silhueta inimiga.
