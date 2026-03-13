@@ -9,7 +9,7 @@
 * `Setas Esquerda/Direita` (ou `A/D`): Movimentam o personagem (jogador de preto, à esquerda).
 * `J`: Ataque Leve (Mais rápido, menor dano, menor risco).
 * `K`: Ataque Pesado (Mais lento, travamento maior, maior dano).
-* * `Shift`: Esquiva.
+* `Shift`: Esquiva.
 * `F` (Segurar): Bloqueio / Defesa.
     * **Perfect Parry**: Se você apertar `F` exatamente no momento do impacto (janela de 150ms), você anula totalmente o dano à sua postura e quebra massivamente a postura do inimigo.
     * **Bloqueio Normal**: Mitiga 100% do dano de HP, mas absorve 50% do dano da arma rival como Dano de Postura.
