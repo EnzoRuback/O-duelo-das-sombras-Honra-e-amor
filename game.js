@@ -204,20 +204,23 @@ class Entity {
             // Reação normal de dano (se não estiver em state ininterrupto como ataque pesado)
             if (this.state !== STATES.HEAVY_ATTACK && this.state !== STATES.STUN) {
                 // SISTEMA ANTI-CHEESE (POISE / HYPER ARMOR) para Chefes
-                if (this.constructor.name === 'Enemy') {
-                     // Ataques leves do Player (Dano < 20) não cancelam a animação do chefe!
-                     if (amount < 20) {
-                         this.consecutiveHitsTaken = (this.consecutiveHitsTaken || 0) + 1;
-                         // Pisca de branco mas não muda de state
-                         const oldColor = this.color;
-                         this.color = 'white';
-                         setTimeout(() => { if(this.state !== STATES.DEAD) this.color = oldColor; }, 100);
-                         return; // Sai sem dar stagger
-                     } else {
-                         // Ataque Pesado quebrou a postura/equilibrio
-                         this.consecutiveHitsTaken = 0; 
-                     }
-                }
+                    if (this.constructor.name === 'Enemy') {
+                         // Ataques leves do Player (Dano < 20) não cancelam a animação do chefe!
+                         if (amount < 20) {
+                             // Only increment if not currently dodging
+                             if (this.state !== STATES.DODGE) {
+                                  this.consecutiveHitsTaken = (this.consecutiveHitsTaken || 0) + 1;
+                             }
+                             // Pisca de branco mas não muda de state
+                             const oldColor = this.color;
+                             this.color = 'white';
+                             setTimeout(() => { if(this.state !== STATES.DEAD && this.color === 'white') this.color = oldColor; }, 100);
+                             return; // Sai sem dar stagger
+                         } else {
+                             // Ataque Pesado quebrou a postura/equilibrio
+                             this.consecutiveHitsTaken = 0; 
+                         }
+                    }
                 if (window.audioManager) window.audioManager.playSfx('hit');
                 this.changeState(STATES.HURT, 0.3); // 300ms hurt
             }
@@ -1086,6 +1089,8 @@ class Enemy extends Entity {
         if (window.gameInstance && window.gameInstance.isCinematic) return; // Congela IA na cutscene
         if (this.state === STATES.DEAD) return;
 
+        const player = window.gameInstance ? window.gameInstance.player : null;
+
         // Anti-Cheese: Se tomou 3+ acertos seguidos de spam leve, ele foge pra trás
         if (this.consecutiveHitsTaken >= 3 && this.state !== STATES.DODGE) {
              this.consecutiveHitsTaken = 0;
@@ -1113,7 +1118,6 @@ class Enemy extends Entity {
         }
 
         // Lógica simples de IA (Baseada em Distância)
-        const player = window.gameInstance.player;
         if (!player || player.state === STATES.DEAD) {
             this.changeState(STATES.IDLE);
             return;
