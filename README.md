@@ -30,4 +30,4 @@
 ## Como Executar
 Basta abrir o arquivo `index.html` em seu navegador web (Google Chrome, Firefox, Edge, Safari, etc.) para iniciar o jogo instantaneamente, ou faça o upload via GitHub Pages.
 
-> Criado pela AntiGravity.
+> Criado por Enzo Ruback com prompts no Antigravity.
